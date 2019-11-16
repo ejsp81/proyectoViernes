@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="prj_Alissez_Estetica.Principal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link type="text/css" href="./Content/bootstrap.min.css" rel="stylesheet" />    
+    <script type="text/javascript" src="./Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./Scripts/jquery-3.0.0.min.js"></script>
+    <link type="text/css" href="./css/menu.css" rel="stylesheet" />
+
+     <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="container-fluid ">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <div id="mySidenav" class="sidena">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="list-group">
+                      <button type="button" class="list-group-item list-group-item-action active">
+                        Gestion Productos
+                      </button>
+                      <button type="button" class="list-group-item list-group-item-action" onclick="closeNav()">Registrar Producto</button>
+                      <button type="button" class="list-group-item list-group-item-action" onclick="closeNav()">Mantenimiento de Producto</button>
+                      <button type="button" class="list-group-item list-group-item-action" onclick="closeNav()">Registrar tipo de Producto</button>
+                    </div>
+                    <div class="list-group">
+                      <button type="button" class="list-group-item list-group-item-action active">
+                        Reportes
+                      </button>
+                      <button type="button" class="list-group-item list-group-item-action" onclick="closeNav()">Reporte de Productos</button>
+                    </div>
+                </div>                
+                <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776; Menu Principal</span>
+            </div>
+            <div class="col-sm-9">
+                <form id="form1" runat="server">
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid">
+        <p>Footer Text</p>
+    </footer>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "25%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+</script>
+</body>
+</html>
