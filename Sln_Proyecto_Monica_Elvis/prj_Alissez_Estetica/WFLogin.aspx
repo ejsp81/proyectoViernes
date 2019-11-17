@@ -26,16 +26,15 @@
 				    <div class="d-flex justify-content-center form_container">
 					    <form id="form1" runat="server">
 						    <div class="form-group">
-                                <asp:Label ID="Label1" runat="server" Text="Usuario"></asp:Label>
-                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control input_user"></asp:TextBox>							
+                                <asp:Label ID="lblUsuario" runat="server" Text="Usuario"></asp:Label>
+                                <asp:TextBox ID="txtUsuario" runat="server" placeholder="Dige su Email" CssClass="form-control input_user" TextMode="Email"></asp:TextBox>							
 						    </div>
 						    <div class="form-group">
-                                <asp:Label ID="Label2" runat="server" Text="Contraseña"></asp:Label>
-                                <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control input_pass" TextMode="Password"></asp:TextBox>
+                                <asp:Label ID="lblPassword" runat="server" Text="Contraseña"></asp:Label>
+                                <asp:TextBox ID="txtPassword" placeholder="Dige su Contraseña" runat="server" CssClass="form-control input_pass" TextMode="Password"></asp:TextBox>
 						    </div>
 						    <div class="d-flex justify-content-center mt-3 login_container">
-                                <asp:Button ID="Button1" runat="server" CssClass="btn-primary" Text="Ingresar" OnClick="Button1_Click"/>
-				 	        
+                                <asp:Button ID="btnIngesar" runat="server" CssClass="btn-primary btn" Text="Ingresar" OnClick="btnIngesar_Click"/>				 	        
 				            </div>
 					    </form>
 				    </div>		

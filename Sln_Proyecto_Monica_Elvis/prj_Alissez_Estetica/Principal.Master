@@ -21,20 +21,21 @@
                 <div id="mySidenav" class="sidena">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <div class="list-group">
-                      <button type="button" class="list-group-item list-group-item-action active">
-                        Gestion Productos
-                      </button>
-                      <button type="button" class="list-group-item list-group-item-action" onclick="closeNav()">Registrar Producto</button>
-                      <button type="button" class="list-group-item list-group-item-action" onclick="closeNav()">Mantenimiento de Producto</button>
-                      <button type="button" class="list-group-item list-group-item-action" onclick="closeNav()">Registrar tipo de Producto</button>
+                        <button type="button" class="list-group-item list-group-item-action active">
+                            Gestion Productos
+                        </button>
+                        <asp:HyperLink ID="hplTipoProducto" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()" NavigateUrl="~/TipoProducto.aspx">Registrar Tipo Producto</asp:HyperLink>
+                        <asp:HyperLink ID="hplProducto" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()">Registrar Producto</asp:HyperLink>
+                        <asp:HyperLink ID="hplProcedimiento" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()">Registrar Procedimiento</asp:HyperLink>
+                        <asp:HyperLink ID="hplMedidaProducto" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()">Registrar Medida de Producto</asp:HyperLink>
                     </div>
                     <div class="list-group">
-                      <button type="button" class="list-group-item list-group-item-action active">
-                        Reportes
-                      </button>
-                      <button type="button" class="list-group-item list-group-item-action" onclick="closeNav()">Reporte de Productos</button>
+                        <button type="button" class="list-group-item list-group-item-action active">
+                            Reportes
+                        </button>
+                        <asp:HyperLink ID="hplReporte" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()">Reporte de Producto</asp:HyperLink>
                     </div>
-                </div>                
+                </div>
                 <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776; Menu Principal</span>
             </div>
             <div class="col-sm-9">
@@ -59,6 +60,6 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
-</script>
+    </script>
 </body>
 </html>

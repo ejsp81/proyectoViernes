@@ -45,7 +45,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -78,6 +86,16 @@
     <Content Include="css\login.css" />
     <Content Include="css\menu.css" />
     <Content Include="index.aspx" />
+    <Content Include="MDAlissez.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MDAlissez.edmx</DependentUpon>
+      <LastGenOutput>MDAlissez.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MDAlissez.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MDAlissez.edmx</DependentUpon>
+      <LastGenOutput>MDAlissez.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -101,6 +119,13 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Principal.Master" />
+    <EntityDeploy Include="MDAlissez.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MDAlissez.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="MDAlissez.edmx.diagram">
+      <DependentUpon>MDAlissez.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -114,6 +139,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="TipoProducto.aspx" />
     <Content Include="WFLogin.aspx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -127,12 +153,33 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Detalle_Procedimiento.cs">
+      <DependentUpon>MDAlissez.tt</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MDAlissez.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDAlissez.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDAlissez.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDAlissez.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDAlissez.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDAlissez.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Medida_Producto.cs">
+      <DependentUpon>MDAlissez.tt</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
@@ -141,7 +188,26 @@
     <Compile Include="Principal.Master.designer.cs">
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
+    <Compile Include="Procedimiento.cs">
+      <DependentUpon>MDAlissez.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.cs">
+      <DependentUpon>MDAlissez.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoProducto.aspx.cs">
+      <DependentUpon>TipoProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TipoProducto.aspx.designer.cs">
+      <DependentUpon>TipoProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo_Producto.cs">
+      <DependentUpon>MDAlissez.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>MDAlissez.tt</DependentUpon>
+    </Compile>
     <Compile Include="WFLogin.aspx.cs">
       <DependentUpon>WFLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -169,6 +235,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

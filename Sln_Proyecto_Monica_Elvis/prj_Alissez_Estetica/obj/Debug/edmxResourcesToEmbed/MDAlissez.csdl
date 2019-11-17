@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDAlissezModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Detalle_Procedimiento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_procedimiento" Type="Int32" Nullable="false" />
+    <Property Name="id_producto" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="valor_cobrado" Type="Int32" />
+    <NavigationProperty Name="Procedimiento" Relationship="Self.FK_Detalle_Procedimiento_Procedimiento" FromRole="Detalle_Procedimiento" ToRole="Procedimiento" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_Detalle_Procedimiento_Producto" FromRole="Detalle_Procedimiento" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Medida_Producto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="detalle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Productoes" Relationship="Self.FK_Producto_Medida" FromRole="Medida_Producto" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Procedimiento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Detalle_Procedimiento" Relationship="Self.FK_Detalle_Procedimiento_Procedimiento" FromRole="Procedimiento" ToRole="Detalle_Procedimiento" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_tipo_producto" Type="Int32" Nullable="false" />
+    <Property Name="id_medida_producto" Type="Int32" Nullable="false" />
+    <Property Name="precio_compra" Type="Int32" Nullable="false" />
+    <Property Name="cantidad_producto" Type="Int32" Nullable="false" />
+    <Property Name="cantidad_disponible" Type="Int32" />
+    <NavigationProperty Name="Detalle_Procedimiento" Relationship="Self.FK_Detalle_Procedimiento_Producto" FromRole="Producto" ToRole="Detalle_Procedimiento" />
+    <NavigationProperty Name="Medida_Producto" Relationship="Self.FK_Producto_Medida" FromRole="Producto" ToRole="Medida_Producto" />
+    <NavigationProperty Name="Tipo_Producto" Relationship="Self.FK_Producto_Tipo" FromRole="Producto" ToRole="Tipo_Producto" />
+  </EntityType>
+  <EntityType Name="Tipo_Producto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Productoes" Relationship="Self.FK_Producto_Tipo" FromRole="Tipo_Producto" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contrasenia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Detalle_Procedimiento_Procedimiento">
+    <End Role="Procedimiento" Type="Self.Procedimiento" Multiplicity="1" />
+    <End Role="Detalle_Procedimiento" Type="Self.Detalle_Procedimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Procedimiento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Detalle_Procedimiento">
+        <PropertyRef Name="id_procedimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_Procedimiento_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="Detalle_Procedimiento" Type="Self.Detalle_Procedimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Detalle_Procedimiento">
+        <PropertyRef Name="id_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Producto_Medida">
+    <End Role="Medida_Producto" Type="Self.Medida_Producto" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medida_Producto">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="id_medida_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Producto_Tipo">
+    <End Role="Tipo_Producto" Type="Self.Tipo_Producto" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Producto">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="id_tipo_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDAlissezEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Detalle_Procedimiento" EntityType="Self.Detalle_Procedimiento" />
+    <EntitySet Name="Medida_Producto" EntityType="Self.Medida_Producto" />
+    <EntitySet Name="Procedimientoes" EntityType="Self.Procedimiento" />
+    <EntitySet Name="Productoes" EntityType="Self.Producto" />
+    <EntitySet Name="Tipo_Producto" EntityType="Self.Tipo_Producto" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK_Detalle_Procedimiento_Procedimiento" Association="Self.FK_Detalle_Procedimiento_Procedimiento">
+      <End Role="Procedimiento" EntitySet="Procedimientoes" />
+      <End Role="Detalle_Procedimiento" EntitySet="Detalle_Procedimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalle_Procedimiento_Producto" Association="Self.FK_Detalle_Procedimiento_Producto">
+      <End Role="Producto" EntitySet="Productoes" />
+      <End Role="Detalle_Procedimiento" EntitySet="Detalle_Procedimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Producto_Medida" Association="Self.FK_Producto_Medida">
+      <End Role="Medida_Producto" EntitySet="Medida_Producto" />
+      <End Role="Producto" EntitySet="Productoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Producto_Tipo" Association="Self.FK_Producto_Tipo">
+      <End Role="Tipo_Producto" EntitySet="Tipo_Producto" />
+      <End Role="Producto" EntitySet="Productoes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

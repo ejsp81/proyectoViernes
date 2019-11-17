@@ -134,19 +134,19 @@ GO
 SET ANSI_PADDING OFF
 
 GO
-/****** Object:  Table [dbo].[Usuaio]    ******/
+/****** Object:  Table [dbo].[Usuario]    ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[Usuaio](
+CREATE TABLE [dbo].[Usuario](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[nombre] [varchar](100) NULL,
     [correo] [varchar](100) NULL,
     [contrasenia] [varchar](100) NULL,
- CONSTRAINT [PK_Usuaio] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_Usuario] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
