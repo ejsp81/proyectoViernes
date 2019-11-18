@@ -87,6 +87,15 @@ namespace prj_Alissez_Estetica
         protected global::System.Web.UI.WebControls.TextBox txtPrecio;
 
         /// <summary>
+        /// Control reqPrecio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPrecio;
+
+        /// <summary>
         /// Control lblCantidad.
         /// </summary>
         /// <remarks>
@@ -105,6 +114,15 @@ namespace prj_Alissez_Estetica
         protected global::System.Web.UI.WebControls.TextBox txtCantidad;
 
         /// <summary>
+        /// Control reqCantidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqCantidad;
+
+        /// <summary>
         /// Control lblDisponible.
         /// </summary>
         /// <remarks>
@@ -121,6 +139,15 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisponible;
+
+        /// <summary>
+        /// Control reqDisponible.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqDisponible;
 
         /// <summary>
         /// Control btnRegistrar.

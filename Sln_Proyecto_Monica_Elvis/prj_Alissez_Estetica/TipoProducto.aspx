@@ -5,11 +5,16 @@
     <form id="form1" runat="server">
         <div class="container">
             <br />
+            <h3>
+              Mantenimiento Tipo de Producto<br />
+              <small class="text-muted">Registrar, Actualizar, Eliminar y Consultar</small>
+            </h3>
             <br />
+            <asp:HiddenField ID="hdfIdTipoProducto" runat="server" />
             <div class="form-group">
-                <asp:Label ID="lblTipoProducto" runat="server" Text="Tipo Producto"></asp:Label>
-                <asp:HiddenField ID="hdfIdTipoProducto" runat="server" />
+                <asp:Label ID="lblTipoProducto" runat="server" Text="Tipo Producto"></asp:Label>                
                 <asp:TextBox ID="txtNombre" runat="server" placeholder="Digite el Tipo de Producto" CssClass="form-control col-sm-6"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="reqNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="El nombre es requerido" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
             </div>
             <div class="row">
                 <div class="d-flex justify-content-between mt-3 col-sm-2">

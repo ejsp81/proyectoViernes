@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -116,6 +117,7 @@ namespace prj_Alissez_Estetica
                 contexto.Medida_Producto.Remove(rec);
                 contexto.SaveChanges();
             }
+           
         }
     }
 }

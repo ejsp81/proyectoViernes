@@ -5,15 +5,21 @@
     <form id="form1" runat="server">
         <div class="container">
             <br />
+            <h3>
+              Mantenimiento Medida de Producto<br />
+              <small class="text-muted">Registrar, Actualizar, Eliminar y Consultar</small>
+            </h3>
             <br />
+            <asp:HiddenField ID="hdfIdMedidaProducto" runat="server" />
             <div class="form-group">
-                <asp:Label ID="lblNombre" runat="server" Text="Nombre de la Medida"></asp:Label>
-                <asp:HiddenField ID="hdfIdMedidaProducto" runat="server" />
+                <asp:Label ID="lblNombre" runat="server" Text="Nombre de la Medida"></asp:Label>                
                 <asp:TextBox ID="txtNombre" runat="server" placeholder="Digite El Nombre de la Medida" CssClass="form-control col-sm-6"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="reqNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="El nombre de la medida es requerido" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblDetalle" runat="server" Text="Detalle de la Medida"></asp:Label>
                 <asp:TextBox ID="txtDetalle" runat="server" placeholder="Digite El Detalle de la Medida" CssClass="form-control col-sm-6"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="reqDetalle" runat="server" ControlToValidate="txtDetalle" ErrorMessage="El Detalle de la medida es requerido" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
             </div>
             <div class="row">
                 <div class="d-flex justify-content-between mt-3 col-sm-2">
@@ -24,6 +30,8 @@
                 </div>
             </div>
         </div>
+
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="#CC3300" />
 
         <br />
         <asp:GridView ID="gvMedidaProducto" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowCommand="gvMedidaProducto_RowCommand">

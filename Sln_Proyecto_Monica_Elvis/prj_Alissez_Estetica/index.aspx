@@ -9,16 +9,11 @@
          <br />
          <br />
         <img class="mx-auto d-block" src="./Images/principal.png" alt="Card image cap">
+         <br />
         <br />
         <br />
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <div class="card-footer">
-            © 2019 Derechos Reservados | Diseñado por Monica y Elvis
-        </div>
     </div>
 </asp:Content>

@@ -5,6 +5,10 @@
     <form id="form1" runat="server">
         <div class="container">
             <br />
+            <h3>
+              Mantenimiento de Producto<br />
+              <small class="text-muted">Registrar, Actualizar, Eliminar y Consultar</small>
+            </h3>
             <br />
             <asp:HiddenField ID="hdfIdProducto" runat="server" />
             <div class="form-group row col-sm-12">
@@ -23,14 +27,17 @@
                 <div class="col-sm-4">
                     <asp:Label ID="lblPrecio" runat="server" Text="Precio Producto"></asp:Label>
                     <asp:TextBox ID="txtPrecio" CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqPrecio" runat="server" ControlToValidate="txtPrecio" ErrorMessage="El Precio del Producto es requerido" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                 </div>
                 <div class="col-sm-4">
                     <asp:Label ID="lblCantidad" runat="server" Text="Cantidad Producto"></asp:Label>
                     <asp:TextBox ID="txtCantidad" CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqCantidad" runat="server" ControlToValidate="txtCantidad" ErrorMessage="La Cantidad del Prodcuto es requerida" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                 </div>
                 <div class="col-sm-4">
                     <asp:Label ID="lblDisponible" runat="server" Text="Cantidad Disponible"></asp:Label>
                     <asp:TextBox ID="txtDisponible" CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqDisponible" runat="server" ControlToValidate="txtDisponible" ErrorMessage="La Cantidad Disponible es requerida" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="form-group row col-sm-8">
