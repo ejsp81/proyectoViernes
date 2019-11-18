@@ -96,6 +96,8 @@
       <DependentUpon>MDAlissez.edmx</DependentUpon>
       <LastGenOutput>MDAlissez.cs</LastGenOutput>
     </Content>
+    <Content Include="MedidaProducto.aspx" />
+    <Content Include="Producto.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -178,6 +180,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MDAlissez.edmx</DependentUpon>
     </Compile>
+    <Compile Include="MedidaProducto.aspx.cs">
+      <DependentUpon>MedidaProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MedidaProducto.aspx.designer.cs">
+      <DependentUpon>MedidaProducto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Medida_Producto.cs">
       <DependentUpon>MDAlissez.tt</DependentUpon>
     </Compile>
@@ -190,6 +199,13 @@
     </Compile>
     <Compile Include="Procedimiento.cs">
       <DependentUpon>MDAlissez.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.aspx.cs">
+      <DependentUpon>Producto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Producto.aspx.designer.cs">
+      <DependentUpon>Producto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Producto.cs">
       <DependentUpon>MDAlissez.tt</DependentUpon>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="TipoProducto.aspx.cs" Inherits="prj_Alissez_Estetica.TipoProducto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="MedidaProducto.aspx.cs" Inherits="prj_Alissez_Estetica.MedidaProducto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -7,9 +7,13 @@
             <br />
             <br />
             <div class="form-group">
-                <asp:Label ID="lblTipoProducto" runat="server" Text="Tipo Producto"></asp:Label>
-                <asp:HiddenField ID="hdfIdTipoProducto" runat="server" />
-                <asp:TextBox ID="txtNombre" runat="server" placeholder="Digite el Tipo de Producto" CssClass="form-control col-sm-6"></asp:TextBox>
+                <asp:Label ID="lblNombre" runat="server" Text="Nombre de la Medida"></asp:Label>
+                <asp:HiddenField ID="hdfIdMedidaProducto" runat="server" />
+                <asp:TextBox ID="txtNombre" runat="server" placeholder="Digite El Nombre de la Medida" CssClass="form-control col-sm-6"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="lblDetalle" runat="server" Text="Detalle de la Medida"></asp:Label>
+                <asp:TextBox ID="txtDetalle" runat="server" placeholder="Digite El Detalle de la Medida" CssClass="form-control col-sm-6"></asp:TextBox>
             </div>
             <div class="row">
                 <div class="d-flex justify-content-between mt-3 col-sm-2">
@@ -22,10 +26,11 @@
         </div>
 
         <br />
-        <asp:GridView ID="gvTipoProductos" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowCommand="gvTipoProducto_RowCommand">
+        <asp:GridView ID="gvMedidaProducto" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowCommand="gvMedidaProducto_RowCommand">
             <Columns>
-                <asp:BoundField DataField="id" HeaderText="Id Tipo Producto" />
-                <asp:BoundField DataField="nombre" HeaderText="Tipo Producto" />
+                <asp:BoundField DataField="id" HeaderText="Id Medida" />
+                <asp:BoundField DataField="nombre" HeaderText="Nombre de Medida" />
+                <asp:BoundField DataField="detalle" HeaderText="Detalle de Medida" />
                 <asp:ButtonField CommandName="SEL" Text="Seleccionar" />
                 <asp:ButtonField CommandName="ELIM" Text="Eliminar" />
             </Columns>

@@ -11,7 +11,7 @@ namespace prj_Alissez_Estetica
 {
 
 
-    public partial class TipoProducto
+    public partial class MedidaProducto
     {
 
         /// <summary>
@@ -24,22 +24,22 @@ namespace prj_Alissez_Estetica
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control lblTipoProducto.
+        /// Control lblNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipoProducto;
+        protected global::System.Web.UI.WebControls.Label lblNombre;
 
         /// <summary>
-        /// Control hdfIdTipoProducto.
+        /// Control hdfIdMedidaProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdfIdTipoProducto;
+        protected global::System.Web.UI.WebControls.HiddenField hdfIdMedidaProducto;
 
         /// <summary>
         /// Control txtNombre.
@@ -49,6 +49,24 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
+
+        /// <summary>
+        /// Control lblDetalle.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDetalle;
+
+        /// <summary>
+        /// Control txtDetalle.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDetalle;
 
         /// <summary>
         /// Control btnRegistrar.
@@ -69,12 +87,12 @@ namespace prj_Alissez_Estetica
         protected global::System.Web.UI.WebControls.Button btnActualizar;
 
         /// <summary>
-        /// Control gvTipoProductos.
+        /// Control gvMedidaProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvTipoProductos;
+        protected global::System.Web.UI.WebControls.GridView gvMedidaProducto;
     }
 }

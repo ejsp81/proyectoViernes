@@ -69,13 +69,13 @@ namespace prj_Alissez_Estetica
         protected global::System.Web.UI.WebControls.HyperLink hplReporte;
 
         /// <summary>
-        /// Control form1.
+        /// Control lblLogin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblLogin;
 
         /// <summary>
         /// Control ContentPlaceHolder1.

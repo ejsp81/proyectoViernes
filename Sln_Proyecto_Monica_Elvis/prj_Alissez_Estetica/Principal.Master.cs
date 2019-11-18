@@ -11,7 +11,8 @@ namespace prj_Alissez_Estetica
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Usuario us =( Usuario) Session["usuario"];
+            lblLogin.Text ="Bienvenido: "+us.nombre;
         }
     }
 }

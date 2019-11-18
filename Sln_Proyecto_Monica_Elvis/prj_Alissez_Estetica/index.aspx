@@ -2,4 +2,23 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="card border-white text-white bg-dark">
+        <div class="card-header">
+            Peluqueria Allisez Estetica
+        </div>
+         <br />
+         <br />
+        <img class="mx-auto d-block" src="./Images/principal.png" alt="Card image cap">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="card-footer">
+            © 2019 Derechos Reservados | Diseñado por Monica y Elvis
+        </div>
+    </div>
 </asp:Content>

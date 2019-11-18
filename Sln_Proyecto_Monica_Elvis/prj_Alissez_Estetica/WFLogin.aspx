@@ -33,8 +33,9 @@
                                 <asp:Label ID="lblPassword" runat="server" Text="Contraseña"></asp:Label>
                                 <asp:TextBox ID="txtPassword" placeholder="Dige su Contraseña" runat="server" CssClass="form-control input_pass" TextMode="Password"></asp:TextBox>
 						    </div>
-						    <div class="d-flex justify-content-center mt-3 login_container">
-                                <asp:Button ID="btnIngesar" runat="server" CssClass="btn-primary btn" Text="Ingresar" OnClick="btnIngesar_Click"/>				 	        
+                            <asp:CustomValidator ID="validarUsuarioPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="El usuario o Contraseña es Incorrecto" OnServerValidate="validarUsuarioPassword_ServerValidate"></asp:CustomValidator>
+						    <div class="d-flex justify-content-center mt-3">
+                                <asp:Button ID="btnIngesar" runat="server" CssClass="btn-primary btn" Text="Ingresar" OnClick="btnIngesar_Click"/>				 	        				                
 				            </div>
 					    </form>
 				    </div>		

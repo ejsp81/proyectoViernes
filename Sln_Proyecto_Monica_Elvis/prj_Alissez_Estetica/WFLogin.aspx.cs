@@ -16,19 +16,28 @@ namespace prj_Alissez_Estetica
 
         protected void btnIngesar_Click(object sender, EventArgs e)
         {
+            if (IsValid)
+            {
+                Response.Redirect("index.aspx");
+            }
+        }
+
+        protected void validarUsuarioPassword_ServerValidate(object source, ServerValidateEventArgs args)
+        {
             string correo = txtUsuario.Text;
             string password = txtPassword.Text;
 
             using (BDAlissezEntities contexto = new BDAlissezEntities())
             {
-                var record = contexto.Usuarios.Where(s => s.correo == correo && s.contrasenia==password).SingleOrDefault<Usuario>();
+                var record = contexto.Usuarios.Where(s => s.correo == correo && s.contrasenia == password).SingleOrDefault<Usuario>();
                 if (record == null)
                 {
-                    txtPassword.Text = "incorrecto";
+                    args.IsValid = false;
                 }
                 else
                 {
-                    Response.Redirect("index.aspx");
+                    args.IsValid = true;
+                    Session.Add("usuario", record);
                 }
             }
         }

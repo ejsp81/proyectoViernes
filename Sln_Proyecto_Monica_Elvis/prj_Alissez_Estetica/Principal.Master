@@ -24,31 +24,29 @@
                         <button type="button" class="list-group-item list-group-item-action active">
                             Gestion Productos
                         </button>
-                        <asp:HyperLink ID="hplTipoProducto" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()" NavigateUrl="~/TipoProducto.aspx">Registrar Tipo Producto</asp:HyperLink>
-                        <asp:HyperLink ID="hplProducto" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()">Registrar Producto</asp:HyperLink>
-                        <asp:HyperLink ID="hplProcedimiento" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()">Registrar Procedimiento</asp:HyperLink>
-                        <asp:HyperLink ID="hplMedidaProducto" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()">Registrar Medida de Producto</asp:HyperLink>
+                        <asp:HyperLink ID="hplTipoProducto"  runat="server" onclick="closeNav()" NavigateUrl="~/TipoProducto.aspx" Font-Size="Large">Registrar Tipo Producto</asp:HyperLink>
+                        <asp:HyperLink ID="hplProducto"  runat="server" onclick="closeNav()" NavigateUrl="~/Producto.aspx" Font-Size="Large">Registrar Producto</asp:HyperLink>
+                        <asp:HyperLink ID="hplProcedimiento"  runat="server" onclick="closeNav()" Font-Size="Large">Registrar Procedimiento</asp:HyperLink>
+                        <asp:HyperLink ID="hplMedidaProducto" runat="server" onclick="closeNav()" NavigateUrl="~/MedidaProducto.aspx" Font-Size="Large">Registrar Medida de Producto</asp:HyperLink>
                     </div>
                     <div class="list-group">
                         <button type="button" class="list-group-item list-group-item-action active">
-                            Reportes
-                        </button>
-                        <asp:HyperLink ID="hplReporte" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()">Reporte de Producto</asp:HyperLink>
+                            Reportes</button>
+                        <asp:HyperLink ID="hplReporte" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()" Font-Size="Large">Reporte de Producto</asp:HyperLink>
                     </div>
                 </div>
+                <br />
+                <asp:Label ID="lblLogin" runat="server" Text=""></asp:Label><br />
                 <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776; Menu Principal</span>
             </div>
             <div class="col-sm-9">
-                <form id="form1" runat="server">
-                    <div>
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
-                </form>
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
             </div>
         </div>
     </div>
-
     <footer class="container-fluid">
         <p>Footer Text</p>
     </footer>
