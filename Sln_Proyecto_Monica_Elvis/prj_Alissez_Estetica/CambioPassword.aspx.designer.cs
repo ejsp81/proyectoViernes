@@ -51,13 +51,13 @@ namespace prj_Alissez_Estetica
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqActual;
 
         /// <summary>
-        /// Control CustomValidator1.
+        /// Control validaPassActual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
+        protected global::System.Web.UI.WebControls.CustomValidator validaPassActual;
 
         /// <summary>
         /// Control lblNueva.

@@ -11,7 +11,7 @@
                 <asp:Label ID="lblActual" runat="server" Text="Contraseña Actual"></asp:Label>
                 <asp:TextBox ID="txtActual" runat="server" placeholder="Digite La Contraseña Actual" CssClass="form-control col-sm-6" TextMode="Password"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="reqActual" runat="server" ControlToValidate="txtActual" ErrorMessage="La Contraseña Actual es Requerida" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
-                <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="txtActual" ErrorMessage="HOLA NO SE P" OnServerValidate="CustomValidator1_ServerValidate"></asp:CustomValidator>
+                <asp:CustomValidator ID="validaPassActual" runat="server" ControlToValidate="txtActual" ErrorMessage="La contraseña Actual No es Correcta" OnServerValidate="validaPassActual_ServerValidate"></asp:CustomValidator>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblNueva" runat="server" Text="Nueva Contraseña"></asp:Label>

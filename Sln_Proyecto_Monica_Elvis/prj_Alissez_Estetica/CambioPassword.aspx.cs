@@ -19,16 +19,16 @@ namespace prj_Alissez_Estetica
 
             if (IsValid)
             {
-                lblActual.Text = "Se puede modificar";
+                validaPassActual.ErrorMessage = "Contraseña Cambiada Satisfactoriamente";
             }
             else
             {
-                lblActual.Text = "no no no";
+                validaPassActual.ErrorMessage = "La Contraseña Actual es Incorrecta";
             }
 
         }
 
-        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        protected void validaPassActual_ServerValidate(object source, ServerValidateEventArgs args)
         {
             Usuario us = (Usuario)Session["usuario"];
             string pass = us.contrasenia;
@@ -41,7 +41,12 @@ namespace prj_Alissez_Estetica
             else
             {
                 args.IsValid = true;
-                //lblActual.Text = "Se puede modificar";
+                using (BDAlissezEntities contexto = new BDAlissezEntities())
+                {
+                    Usuario rec = contexto.Usuarios.FirstOrDefault<Usuario>(s => s.id == us.id);
+                    rec.contrasenia = txtNueva.Text;
+                    contexto.SaveChanges();
+                }
             }
         }
     }
