@@ -18,7 +18,7 @@ namespace prj_Alissez_Estetica
        
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            ActualizarCiuad();
+            ActualizarMedidaProducto();
             LimpiarRegistros();
             btnRegistrar.Enabled = true;
             btnActualizar.Enabled = false;
@@ -89,7 +89,7 @@ namespace prj_Alissez_Estetica
                 hdfIdMedidaProducto.Value = record.id.ToString();
             }
         }
-        private void ActualizarCiuad()
+        private void ActualizarMedidaProducto()
         {
             using (BDAlissezEntities contexto = new BDAlissezEntities())
             {

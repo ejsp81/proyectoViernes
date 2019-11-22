@@ -14,6 +14,7 @@ namespace prj_Alissez_Estetica
             cargarProducto();
             cargarTipoProducto();
             cargarMedidaProducto();
+            //EntityModelCodeGenerator
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
@@ -87,6 +88,7 @@ namespace prj_Alissez_Estetica
                 Producto rec = new Producto();
                 rec.id_tipo_producto = Convert.ToInt32(ddlTipoProducto.SelectedValue);
                 rec.id_medida_producto = Convert.ToInt32(ddlMedidaProducto.SelectedValue);
+                rec.nombre = txtNombre.Text;
                 rec.precio_compra = Convert.ToInt32(txtPrecio.Text);
                 rec.cantidad_producto = Convert.ToInt32(txtCantidad.Text);
                 rec.cantidad_disponible = Convert.ToInt32(txtDisponible.Text);
@@ -104,6 +106,7 @@ namespace prj_Alissez_Estetica
                 var record = contexto.Productoes.Where(s => s.id == Id).SingleOrDefault<Producto>();
                 ddlTipoProducto.SelectedValue = record.id_medida_producto.ToString();
                 ddlMedidaProducto.SelectedValue = record.id_medida_producto.ToString();
+                txtNombre.Text = record.nombre;
                 txtPrecio.Text = record.precio_compra.ToString();
                 txtCantidad.Text = record.cantidad_producto.ToString();
                 txtDisponible.Text = record.cantidad_disponible.ToString();
@@ -118,6 +121,7 @@ namespace prj_Alissez_Estetica
                 Producto rec = contexto.Productoes.FirstOrDefault<Producto>(s => s.id == Id);
                 rec.id_tipo_producto = Convert.ToInt32(ddlTipoProducto.SelectedValue);
                 rec.id_medida_producto = Convert.ToInt32(ddlMedidaProducto.SelectedValue);
+                rec.nombre = txtNombre.Text;
                 rec.precio_compra = Convert.ToInt32(txtPrecio.Text);
                 rec.cantidad_producto = Convert.ToInt32(txtCantidad.Text);
                 rec.cantidad_disponible = Convert.ToInt32(txtDisponible.Text);
@@ -127,6 +131,7 @@ namespace prj_Alissez_Estetica
 
         private void LimpiarRegistros()
         {
+            txtNombre.Text = string.Empty;
             txtPrecio.Text = string.Empty;
             txtCantidad.Text = string.Empty;
             txtDisponible.Text = string.Empty;

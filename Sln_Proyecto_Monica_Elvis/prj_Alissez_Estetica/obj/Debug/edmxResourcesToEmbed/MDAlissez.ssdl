@@ -33,6 +33,7 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_tipo_producto" Type="int" Nullable="false" />
     <Property Name="id_medida_producto" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="precio_compra" Type="int" Nullable="false" />
     <Property Name="cantidad_producto" Type="int" Nullable="false" />
     <Property Name="cantidad_disponible" Type="int" />

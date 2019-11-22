@@ -11,7 +11,7 @@ namespace prj_Alissez_Estetica
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session.Clear();
         }
 
         protected void btnIngesar_Click(object sender, EventArgs e)

@@ -52,6 +52,7 @@ CREATE TABLE [dbo].[Producto](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[id_tipo_producto] [int]NOT NULL,
 	[id_medida_producto] [int]NOT NULL,
+	[nombre] [varchar](100) NOT NULL,
 	[precio_compra] [int]NOT NULL,
 	[cantidad_producto] [int]NOT NULL,
 	[cantidad_disponible] [int] NULL,
@@ -154,4 +155,9 @@ CREATE TABLE [dbo].[Usuario](
 
 GO
 SET ANSI_PADDING OFF
+
+SET IDENTITY_INSERT [dbo].[Usuario] ON
+INSERT INTO [dbo].[Usuario] ([id], [nombre], [correo], [contrasenia]) VALUES (1, N'Elvis Jose Sanchez Pineda', N'ejsp81@hotmail.com', N'COTONIELA')
+INSERT INTO [dbo].[Usuario] ([id], [nombre], [correo], [contrasenia]) VALUES (2, N'Monica Juldrey Perez Flor', N'juldrey@hotmail.com', N'JULDREY')
+SET IDENTITY_INSERT [dbo].[Usuario] OFF
 

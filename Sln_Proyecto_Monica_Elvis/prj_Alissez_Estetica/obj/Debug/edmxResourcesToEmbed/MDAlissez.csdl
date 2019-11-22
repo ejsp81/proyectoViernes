@@ -43,6 +43,7 @@
     <NavigationProperty Name="Detalle_Procedimiento" Relationship="Self.FK_Detalle_Procedimiento_Producto" FromRole="Producto" ToRole="Detalle_Procedimiento" />
     <NavigationProperty Name="Medida_Producto" Relationship="Self.FK_Producto_Medida" FromRole="Producto" ToRole="Medida_Producto" />
     <NavigationProperty Name="Tipo_Producto" Relationship="Self.FK_Producto_Tipo" FromRole="Producto" ToRole="Tipo_Producto" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Tipo_Producto">
     <Key>

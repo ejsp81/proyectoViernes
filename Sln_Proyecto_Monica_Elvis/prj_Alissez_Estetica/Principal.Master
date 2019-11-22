@@ -23,20 +23,22 @@
                         <button type="button" class="list-group-item list-group-item-action active">
                             Gestion Productos
                         </button>
-                        <asp:HyperLink ID="hplTipoProducto" runat="server" onclick="closeNav()" NavigateUrl="~/TipoProducto.aspx" Font-Size="Large">Registrar Tipo Producto</asp:HyperLink>
-                        <asp:HyperLink ID="hplProducto" runat="server" onclick="closeNav()" NavigateUrl="~/Producto.aspx" Font-Size="Large">Registrar Producto</asp:HyperLink>
-                        <asp:HyperLink ID="hplProcedimiento" runat="server" onclick="closeNav()" Font-Size="Large">Registrar Procedimiento</asp:HyperLink>
-                        <asp:HyperLink ID="hplMedidaProducto" runat="server" onclick="closeNav()" NavigateUrl="~/MedidaProducto.aspx" Font-Size="Large">Registrar Medida de Producto</asp:HyperLink>
+                        <asp:HyperLink ID="hplTipoProducto" runat="server" onclick="closeNav()" NavigateUrl="~/TipoProducto.aspx" Font-Size="Large" Font-Strikeout="False" ForeColor="Blue" ToolTip="Registrar Tipo Producto">Registrar Tipo Producto</asp:HyperLink>
+                        <asp:HyperLink ID="hplProducto" runat="server" onclick="closeNav()" NavigateUrl="~/Producto.aspx" Font-Size="Large" ForeColor="Blue">Registrar Producto</asp:HyperLink>
+                        <asp:HyperLink ID="hplProcedimiento" runat="server" onclick="closeNav()" Font-Size="Large" NavigateUrl="~/Procedimiento.aspx" ForeColor="Blue">Registrar Procedimiento</asp:HyperLink>
+                        <asp:HyperLink ID="hplMedidaProducto" runat="server" onclick="closeNav()" NavigateUrl="~/MedidaProducto.aspx" Font-Size="Large" ForeColor="Blue">Registrar Medida de Producto</asp:HyperLink>
+                        <asp:HyperLink ID="hplDetalleProcedimiento" runat="server" onclick="closeNav()" NavigateUrl="~/DetalleProcedimiento.aspx" Font-Size="Large" ForeColor="Blue">Detalle Procedimiento</asp:HyperLink>
                     </div>
                     <div class="list-group">
                         <button type="button" class="list-group-item list-group-item-action active">
                             Reportes</button>
-                        <asp:HyperLink ID="hplReporte" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()" Font-Size="Large">Reporte de Producto</asp:HyperLink>
+                        <asp:HyperLink ID="hplReporte" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()" Font-Size="Large" ForeColor="Blue">Reporte de Producto</asp:HyperLink>
                     </div>
                     <div class="list-group">
                         <button type="button" class="list-group-item list-group-item-action active">
                             Seguridad</button>
-                        <asp:HyperLink ID="hplCambioPassword" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()" Font-Size="Large" NavigateUrl="~/CambioPassword.aspx">Modificar Contraseña</asp:HyperLink>
+                        <asp:HyperLink ID="hplCambioPassword" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()" Font-Size="Large" NavigateUrl="~/CambioPassword.aspx" ForeColor="Blue">Modificar Contraseña</asp:HyperLink>
+                         <asp:HyperLink ID="hplCerrarSesion" CssClass="list-group-item list-group-item-action" runat="server"  Font-Size="Large" NavigateUrl="~/WFLogin.aspx" ForeColor="Blue">Cerrar Sesion</asp:HyperLink>
                     </div>
                 </div>
                 <br />
@@ -48,14 +50,13 @@
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
-    </div>
-    </div>
+            </div>
+        </div>
     </div>
     <br />
-    <br />
-    <footer>
-        <div class="card-footer">
-            © 2019 Derechos Reservados | Diseñado por Monica y Elvis
+    <footer id="sticky-footer" class="bg-dark text-white-50 footer fixed-bottom">
+        <div class="container text-center">
+            <small>Copyright © 2019 &copy; | Diseñado por Monica y Elvis</small>
         </div>
     </footer>
     <script>

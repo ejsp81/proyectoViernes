@@ -7,30 +7,31 @@ using System.Web.UI.WebControls;
 
 namespace prj_Alissez_Estetica
 {
-    public partial class TipoProducto : System.Web.UI.Page
+    public partial class Procedimiento1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargarTipo_Productos();
+            cargarProcedimiento();
+        }
+
+        protected void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            crearProcedimiento();
+            LimpiarRegistros();
+            btnRegistrar.Enabled = true;
+            cargarProcedimiento();
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            ActualizarTipoProducto();
+            ActualizarProcedimiento();
             LimpiarRegistros();
             btnRegistrar.Enabled = true;
             btnActualizar.Enabled = false;
-            cargarTipo_Productos();
-        }
-        protected void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            CrearTipo_Producto();
-            LimpiarRegistros();
-            btnRegistrar.Enabled = true;
-            cargarTipo_Productos();
+            cargarProcedimiento();
         }
 
-        protected void gvTipoProducto_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gvProcedimiento_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             //obtener la fila que se esta tratando de obtener
             int nrofila = Convert.ToInt32(e.CommandArgument);
@@ -48,49 +49,57 @@ namespace prj_Alissez_Estetica
                 btnActualizar.Enabled = false;
                 btnRegistrar.Enabled = true;
             }
-            cargarTipo_Productos();
+            cargarProcedimiento();
         }
 
-        public void cargarTipo_Productos()
+        public void cargarProcedimiento()
         {
             using (BDAlissezEntities contexto = new BDAlissezEntities())
             {
-                gvTipoProductos.DataSource = contexto.Tipo_Producto.ToList<Tipo_Producto>();
-                gvTipoProductos.DataBind();
+                gvProcedimiento.DataSource = contexto.Procedimientoes.ToList<Procedimiento>();
+                gvProcedimiento.DataBind();
             }
         }
 
-       
 
-        private void CrearTipo_Producto()
+
+        private void crearProcedimiento()
         {
             using (BDAlissezEntities contexto = new BDAlissezEntities())
             {
-                Tipo_Producto rec = new Tipo_Producto();
+                Procedimiento rec = new Procedimiento();
                 rec.nombre = txtNombre.Text;
-                contexto.Tipo_Producto.Add(rec);
+                string fecha= txtFecha.Text;
+                rec.fecha = DateTime.Parse(fecha);
+                contexto.Procedimientoes.Add(rec);
                 contexto.SaveChanges();
             }
         }
 
+        
         private void SeleccionarFila(int nrofila)
         {
-            int Id = int.Parse(gvTipoProductos.Rows[nrofila].Cells[0].Text);
+            int Id = int.Parse(gvProcedimiento.Rows[nrofila].Cells[0].Text);
 
             using (BDAlissezEntities contexto = new BDAlissezEntities())
             {
-                var record = contexto.Tipo_Producto.Where(s => s.id == Id).SingleOrDefault<Tipo_Producto>();
+                var record = contexto.Procedimientoes.Where(s => s.id == Id).SingleOrDefault<Procedimiento>();
                 txtNombre.Text = record.nombre;
-                hdfIdTipoProducto.Value = record.id.ToString();
+                DateTime fecha = Convert.ToDateTime(record.fecha);
+                txtFecha.Text =  fecha.ToShortDateString();
+                //lblFecha.Text= fecha.ToShortDateString();
+                hdfIdProcedimiento.Value = record.id.ToString();
             }
         }
-        private void ActualizarTipoProducto()
+        private void ActualizarProcedimiento()
         {
             using (BDAlissezEntities contexto = new BDAlissezEntities())
             {
-                int Id = Convert.ToInt32(hdfIdTipoProducto.Value);
-                Tipo_Producto rec = contexto.Tipo_Producto.FirstOrDefault<Tipo_Producto>(s => s.id == Id);
+                int Id = Convert.ToInt32(hdfIdProcedimiento.Value);
+                Procedimiento rec = contexto.Procedimientoes.FirstOrDefault<Procedimiento>(s => s.id == Id);
                 rec.nombre = txtNombre.Text;
+                string fecha = txtFecha.Text;
+                rec.fecha = DateTime.Parse(fecha);
                 contexto.SaveChanges();
             }
         }
@@ -98,19 +107,20 @@ namespace prj_Alissez_Estetica
         private void LimpiarRegistros()
         {
             txtNombre.Text = string.Empty;
+            txtFecha.Text = string.Empty;
         }
-       
+
 
         private void EliminarFila(int nrofila)
         {
-            int Id = int.Parse(gvTipoProductos.Rows[nrofila].Cells[0].Text);
+            int Id = int.Parse(gvProcedimiento.Rows[nrofila].Cells[0].Text);
             using (BDAlissezEntities contexto = new BDAlissezEntities())
             {
-                Tipo_Producto rec = contexto.Tipo_Producto.FirstOrDefault<Tipo_Producto>(s => s.id == Id);
-                contexto.Tipo_Producto.Remove(rec);
+                Procedimiento rec = contexto.Procedimientoes.FirstOrDefault<Procedimiento>(s => s.id == Id);
+                contexto.Procedimientoes.Remove(rec);
                 contexto.SaveChanges();
             }
+
         }
-      
     }
 }

@@ -33,6 +33,7 @@
     <EntitySetMapping Name="Productoes">
       <EntityTypeMapping TypeName="BDAlissezModel.Producto">
         <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="id_tipo_producto" ColumnName="id_tipo_producto" />
           <ScalarProperty Name="id_medida_producto" ColumnName="id_medida_producto" />

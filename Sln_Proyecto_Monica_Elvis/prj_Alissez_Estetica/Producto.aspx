@@ -12,15 +12,20 @@
             <br />
             <asp:HiddenField ID="hdfIdProducto" runat="server" />
             <div class="form-group row col-sm-12">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <asp:Label ID="lblTipoProducto" runat="server" Text="Tipo del Producto"></asp:Label>
                     <asp:DropDownList ID="ddlTipoProducto" CssClass="form-control" runat="server" DataTextField="nombre" DataValueField="id">
                     </asp:DropDownList>
                 </div>
-                <div class="col-sm-6">
-                    <asp:Label ID="Label1" runat="server" Text="Medida del Producto"></asp:Label>
+                <div class="col-sm-4">
+                    <asp:Label ID="lblMedidaProducto" runat="server" Text="Medida del Producto"></asp:Label>
                     <asp:DropDownList ID="ddlMedidaProducto" CssClass="form-control" runat="server" DataTextField="nombre" DataValueField="id">
                     </asp:DropDownList>
+                </div>
+                 <div class="col-sm-4">
+                    <asp:Label ID="lblNombre" runat="server" Text="Nombre del Producto"></asp:Label>
+                    <asp:TextBox ID="txtNombre" placeholder="Digite el Nombre del Producto" CssClass="form-control" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="El Nombre del Producto es requerido" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="form-group row col-sm-12">
@@ -57,6 +62,7 @@
                 <asp:BoundField DataField="id" HeaderText="Id Producto" />
                 <asp:BoundField DataField="Tipo_Producto.nombre" HeaderText="Tipo Producto" />
                 <asp:BoundField DataField="Medida_Producto.nombre" HeaderText="Medida Producto" />
+                <asp:BoundField DataField="nombre" HeaderText="Descripcion" />
                 <asp:BoundField DataField="precio_compra" HeaderText="Precio">
                     <HeaderStyle Font-Bold="True" />
                     <ItemStyle HorizontalAlign="Center" />

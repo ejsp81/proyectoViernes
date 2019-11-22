@@ -86,6 +86,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\login.css" />
     <Content Include="css\menu.css" />
+    <Content Include="DetalleProcedimiento.aspx" />
     <Content Include="index.aspx" />
     <Content Include="MDAlissez.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -98,6 +99,7 @@
       <LastGenOutput>MDAlissez.cs</LastGenOutput>
     </Content>
     <Content Include="MedidaProducto.aspx" />
+    <Content Include="Procedimiento.aspx" />
     <Content Include="Producto.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -163,6 +165,13 @@
     <Compile Include="CambioPassword.aspx.designer.cs">
       <DependentUpon>CambioPassword.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DetalleProcedimiento.aspx.cs">
+      <DependentUpon>DetalleProcedimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleProcedimiento.aspx.designer.cs">
+      <DependentUpon>DetalleProcedimiento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Detalle_Procedimiento.cs">
       <DependentUpon>MDAlissez.tt</DependentUpon>
     </Compile>
@@ -204,6 +213,13 @@
     </Compile>
     <Compile Include="Principal.Master.designer.cs">
       <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Procedimiento.aspx.cs">
+      <DependentUpon>Procedimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Procedimiento.aspx.designer.cs">
+      <DependentUpon>Procedimiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Procedimiento.cs">
       <DependentUpon>MDAlissez.tt</DependentUpon>

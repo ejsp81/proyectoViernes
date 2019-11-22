@@ -8,6 +8,8 @@
         </div>
          <br />
          <br />
+        <br />
+        <br />
         <img class="mx-auto d-block" src="./Images/principal.png" alt="Card image cap">
          <br />
         <br />
