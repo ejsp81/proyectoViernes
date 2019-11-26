@@ -94,10 +94,18 @@ namespace prj_Alissez_Estetica
                 Detalle_Procedimiento rec = new Detalle_Procedimiento();
                 rec.id_procedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
                 rec.id_producto = Convert.ToInt32(ddlProducto.SelectedValue);
+                string fecha = txtFecha.Text;
+                rec.fecha = DateTime.Parse(fecha);
                 rec.cantidad = Convert.ToInt32(txtCantidad.Text);
                 rec.valor_cobrado = Convert.ToInt32(txtValorCobrado.Text);
                 contexto.Detalle_Procedimiento.Add(rec);
                 contexto.SaveChanges();
+                //ACTUALIZA PRODUCTO
+                int Id = Convert.ToInt32(ddlProducto.SelectedValue);
+                Producto pro = contexto.Productoes.FirstOrDefault<Producto>(s => s.id == Id);
+                pro.cantidad_disponible  = pro.cantidad_disponible- Convert.ToInt32(txtCantidad.Text);
+                contexto.SaveChanges();
+
             }
         }
 
@@ -110,6 +118,8 @@ namespace prj_Alissez_Estetica
                 var record = contexto.Detalle_Procedimiento.Where(s => s.id == Id).SingleOrDefault<Detalle_Procedimiento>();
                 ddlProcedimiento.SelectedValue = record.id_procedimiento.ToString();
                 ddlProducto.SelectedValue = record.id_producto.ToString();
+                DateTime fecha = Convert.ToDateTime(record.fecha);
+                txtFecha.Text = fecha.ToShortDateString();
                 txtCantidad.Text = record.cantidad.ToString();
                 txtValorCobrado.Text = record.valor_cobrado.ToString();
                 hdfIdDetalleProcedimiento.Value = record.id.ToString();
@@ -124,6 +134,8 @@ namespace prj_Alissez_Estetica
                 rec.id_procedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
                 rec.id_producto = Convert.ToInt32(ddlProducto.SelectedValue);
                 rec.cantidad = Convert.ToInt32(txtCantidad.Text);
+                string fecha = txtFecha.Text;
+                rec.fecha = DateTime.Parse(fecha);
                 rec.valor_cobrado = Convert.ToInt32(txtValorCobrado.Text);
                 contexto.SaveChanges();
             }
@@ -133,6 +145,7 @@ namespace prj_Alissez_Estetica
         {
             txtCantidad.Text = string.Empty;
             txtValorCobrado.Text = string.Empty;
+            txtFecha.Text = string.Empty;
         }
 
 

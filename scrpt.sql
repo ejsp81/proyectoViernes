@@ -88,8 +88,7 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Procedimiento](
 	[id] [int] IDENTITY(1,1) NOT NULL,
-	[nombre] [varchar](100) NULL,
-    [fecha] [Date] NULL,
+	[nombre] [varchar](100) NULL,    
  CONSTRAINT [PK_Procedimiento] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -112,6 +111,7 @@ CREATE TABLE [dbo].[Detalle_Procedimiento](
 	[id_producto] [int]NOT NULL,
 	[cantidad] [int]NOT NULL,
 	[valor_cobrado] [int] NULL,
+	[fecha] [Date] NULL,
  CONSTRAINT [PK_Detalle_Procedimiento] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC

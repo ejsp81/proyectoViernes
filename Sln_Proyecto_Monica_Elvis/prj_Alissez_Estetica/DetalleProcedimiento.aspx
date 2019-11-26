@@ -23,13 +23,18 @@
                     </asp:DropDownList>
                 </div>
             </div>
-            <div class="form-group row col-sm-10">                
-                <div class="col-sm-5">
+            <div class="form-group row col-sm-10">   
+                <div class="col-sm-4">
+                    <asp:Label ID="lblFecha" runat="server" Text="Fecha del Procedimiento"></asp:Label>
+                    <asp:TextBox ID="txtFecha" runat="server"  CssClass="form-control" TextMode="Date"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqFecha" runat="server" ControlToValidate="txtFecha" ErrorMessage="La Fecha del Procedimiento es Requerida" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
+                </div>
+                <div class="col-sm-3">
                     <asp:Label ID="lblCantidad" runat="server" Text="Cantidad Producto"></asp:Label>
                     <asp:TextBox ID="txtCantidad" CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="reqCantidad" runat="server" ControlToValidate="txtCantidad" ErrorMessage="La Cantidad es requerida" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                 </div>
-                <div class="col-sm-5">
+                <div class="col-sm-3">
                     <asp:Label ID="lblValorCobrado" runat="server" Text="Valor Cobrado"></asp:Label>
                     <asp:TextBox ID="txtValorCobrado" CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="reqValorCobrado" runat="server" ControlToValidate="txtValorCobrado" ErrorMessage="El Valor es requerido" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
@@ -46,12 +51,14 @@
         </div>
 
         <br />
+        <br />
 
         <asp:GridView ID="gvDetalleProcedimientos" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowCommand="gvDetalleProcedimiento_RowCommand">
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="Id Detalle P." />
                 <asp:BoundField DataField="Procedimiento.nombre" HeaderText="Procedimiento" />
                 <asp:BoundField DataField="Producto.nombre" HeaderText="Producto" />
+                <asp:BoundField DataField="fecha" HeaderText="Fecha" />
                 <asp:BoundField DataField="cantidad" HeaderText="Catntidad">
                     <HeaderStyle Font-Bold="True" />
                     <ItemStyle HorizontalAlign="Center" />
@@ -72,5 +79,7 @@
             <SortedDescendingCellStyle BackColor="#D6DFDF" />
             <SortedDescendingHeaderStyle BackColor="#002876" />
         </asp:GridView>
+        <br />
+        <br />
     </form>
 </asp:Content>

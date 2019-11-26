@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Detalle_Procedimiento">
       <EntityTypeMapping TypeName="BDAlissezModel.Detalle_Procedimiento">
         <MappingFragment StoreEntitySet="Detalle_Procedimiento">
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="id_procedimiento" ColumnName="id_procedimiento" />
           <ScalarProperty Name="id_producto" ColumnName="id_producto" />
@@ -26,7 +27,6 @@
         <MappingFragment StoreEntitySet="Procedimiento">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="fecha" ColumnName="fecha" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

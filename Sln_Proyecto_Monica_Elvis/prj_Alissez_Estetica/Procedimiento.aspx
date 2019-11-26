@@ -15,12 +15,7 @@
                 <asp:Label ID="lblNombre" runat="server" Text="Nombre del Procedimiento"></asp:Label>                
                 <asp:TextBox ID="txtNombre" runat="server" placeholder="Digite El Nombre del Procedimiento" CssClass="form-control col-sm-6"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="reqNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="El nombre del Procedimiento es requerido" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
-            </div>
-            <div class="form-group">
-                <asp:Label ID="lblFecha" runat="server" Text="Fecha del Procedimiento"></asp:Label>
-                <asp:TextBox ID="txtFecha" runat="server"  CssClass="form-control col-sm-6" TextMode="Date"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqFecha" runat="server" ControlToValidate="txtFecha" ErrorMessage="La Fecha del Procedimiento es Requerida" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
-            </div>
+            </div>            
             <div class="row">
                 <div class="d-flex justify-content-between mt-3 col-sm-2">
                     <asp:Button ID="btnRegistrar" runat="server" CssClass="btn-primary btn" Text="Registrar" OnClick="btnRegistrar_Click" />
@@ -37,7 +32,6 @@
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="Id Procedimiento" />
                 <asp:BoundField DataField="nombre" HeaderText="Nombre del Procedimiento" />
-                <asp:BoundField DataField="fecha" HeaderText="Detalle del Procedimiento" />
                 <asp:ButtonField CommandName="SEL" Text="Seleccionar" />
                 <asp:ButtonField CommandName="ELIM" Text="Eliminar" />
             </Columns>

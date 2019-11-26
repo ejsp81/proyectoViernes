@@ -9,6 +9,7 @@
     <Property Name="id_producto" Type="int" Nullable="false" />
     <Property Name="cantidad" Type="int" Nullable="false" />
     <Property Name="valor_cobrado" Type="int" />
+    <Property Name="fecha" Type="date" />
   </EntityType>
   <EntityType Name="Medida_Producto">
     <Key>
@@ -24,7 +25,6 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="100" />
-    <Property Name="fecha" Type="date" />
   </EntityType>
   <EntityType Name="Producto">
     <Key>

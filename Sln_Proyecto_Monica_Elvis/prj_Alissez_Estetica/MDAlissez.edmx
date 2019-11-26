@@ -14,6 +14,7 @@
           <Property Name="id_producto" Type="int" Nullable="false" />
           <Property Name="cantidad" Type="int" Nullable="false" />
           <Property Name="valor_cobrado" Type="int" />
+          <Property Name="fecha" Type="date" />
         </EntityType>
         <EntityType Name="Medida_Producto">
           <Key>
@@ -29,7 +30,6 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="100" />
-          <Property Name="fecha" Type="date" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -146,6 +146,7 @@
           <Property Name="valor_cobrado" Type="Int32" />
           <NavigationProperty Name="Procedimiento" Relationship="Self.FK_Detalle_Procedimiento_Procedimiento" FromRole="Detalle_Procedimiento" ToRole="Procedimiento" />
           <NavigationProperty Name="Producto" Relationship="Self.FK_Detalle_Procedimiento_Producto" FromRole="Detalle_Procedimiento" ToRole="Producto" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Medida_Producto">
           <Key>
@@ -162,7 +163,6 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="fecha" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Detalle_Procedimiento" Relationship="Self.FK_Detalle_Procedimiento_Procedimiento" FromRole="Procedimiento" ToRole="Detalle_Procedimiento" />
         </EntityType>
         <EntityType Name="Producto">
@@ -278,6 +278,7 @@
           <EntitySetMapping Name="Detalle_Procedimiento">
             <EntityTypeMapping TypeName="BDAlissezModel.Detalle_Procedimiento">
               <MappingFragment StoreEntitySet="Detalle_Procedimiento">
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_procedimiento" ColumnName="id_procedimiento" />
                 <ScalarProperty Name="id_producto" ColumnName="id_producto" />
@@ -300,7 +301,6 @@
               <MappingFragment StoreEntitySet="Procedimiento">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

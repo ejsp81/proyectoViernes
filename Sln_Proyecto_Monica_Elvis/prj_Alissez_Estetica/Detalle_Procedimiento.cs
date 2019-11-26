@@ -19,6 +19,7 @@ namespace prj_Alissez_Estetica
         public int id_producto { get; set; }
         public int cantidad { get; set; }
         public Nullable<int> valor_cobrado { get; set; }
+        public Nullable<System.DateTime> fecha { get; set; }
     
         public virtual Procedimiento Procedimiento { get; set; }
         public virtual Producto Producto { get; set; }

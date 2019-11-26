@@ -69,9 +69,7 @@ namespace prj_Alissez_Estetica
             using (BDAlissezEntities contexto = new BDAlissezEntities())
             {
                 Procedimiento rec = new Procedimiento();
-                rec.nombre = txtNombre.Text;
-                string fecha= txtFecha.Text;
-                rec.fecha = DateTime.Parse(fecha);
+                rec.nombre = txtNombre.Text;                
                 contexto.Procedimientoes.Add(rec);
                 contexto.SaveChanges();
             }
@@ -86,8 +84,6 @@ namespace prj_Alissez_Estetica
             {
                 var record = contexto.Procedimientoes.Where(s => s.id == Id).SingleOrDefault<Procedimiento>();
                 txtNombre.Text = record.nombre;
-                DateTime fecha = Convert.ToDateTime(record.fecha);
-                txtFecha.Text =  fecha.ToShortDateString();
                 //lblFecha.Text= fecha.ToShortDateString();
                 hdfIdProcedimiento.Value = record.id.ToString();
             }
@@ -99,8 +95,7 @@ namespace prj_Alissez_Estetica
                 int Id = Convert.ToInt32(hdfIdProcedimiento.Value);
                 Procedimiento rec = contexto.Procedimientoes.FirstOrDefault<Procedimiento>(s => s.id == Id);
                 rec.nombre = txtNombre.Text;
-                string fecha = txtFecha.Text;
-                rec.fecha = DateTime.Parse(fecha);
+               
                 contexto.SaveChanges();
             }
         }
@@ -108,7 +103,7 @@ namespace prj_Alissez_Estetica
         private void LimpiarRegistros()
         {
             txtNombre.Text = string.Empty;
-            txtFecha.Text = string.Empty;
+            
         }
 
 
