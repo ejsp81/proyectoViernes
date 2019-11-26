@@ -11,8 +11,12 @@ namespace prj_Alissez_Estetica
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargarProcedimiento();
-            cargarProducto();
+            if (!IsPostBack)
+            {
+                cargarProcedimiento();
+                cargarProducto();
+            }
+                
             cargarDetalleProcedimiento();
         }
 

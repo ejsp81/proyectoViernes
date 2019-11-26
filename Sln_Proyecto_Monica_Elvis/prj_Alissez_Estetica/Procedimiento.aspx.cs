@@ -20,6 +20,7 @@ namespace prj_Alissez_Estetica
             LimpiarRegistros();
             btnRegistrar.Enabled = true;
             cargarProcedimiento();
+
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)

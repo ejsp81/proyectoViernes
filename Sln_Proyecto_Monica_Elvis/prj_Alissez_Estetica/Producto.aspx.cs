@@ -11,9 +11,13 @@ namespace prj_Alissez_Estetica
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargarProducto();
-            cargarTipoProducto();
-            cargarMedidaProducto();
+
+            if (!IsPostBack)
+            {
+                cargarTipoProducto();
+                cargarMedidaProducto();
+            }
+                cargarProducto();
             //EntityModelCodeGenerator
         }
 
@@ -25,13 +29,7 @@ namespace prj_Alissez_Estetica
             btnActualizar.Enabled = false;
             cargarProducto();
         }
-        protected void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            CrearProducto();
-            LimpiarRegistros();
-            btnRegistrar.Enabled = true;
-            cargarProducto();
-        }
+        
 
         protected void gvProducto_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -149,6 +147,12 @@ namespace prj_Alissez_Estetica
             }
         }
 
-        
+        protected void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            CrearProducto();
+            LimpiarRegistros();
+            btnRegistrar.Enabled = true;
+            cargarProducto();
+        }
     }
 }
