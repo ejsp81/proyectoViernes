@@ -19,7 +19,7 @@
                 <asp:RequiredFieldValidator ID="reqNueva" runat="server" ControlToValidate="txtNueva" ErrorMessage="La Nueva Contraseña Es Requerida" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
-                <asp:Label ID="lblConfirma" runat="server" Text="Nueva Contraseña"></asp:Label>
+                <asp:Label ID="lblConfirma" runat="server" Text="Confirmar Contraseña"></asp:Label>
                 <asp:TextBox ID="txtConfirma" runat="server" placeholder="Confirme la Contraseña" CssClass="form-control col-sm-6" TextMode="Password"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="reqConfirma" runat="server" ControlToValidate="txtConfirma" ErrorMessage="Debe Confirmar La Contraseña" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
             </div>

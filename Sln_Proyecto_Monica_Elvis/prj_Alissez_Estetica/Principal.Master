@@ -31,11 +31,6 @@
                     </div>
                     <div class="list-group">
                         <button type="button" class="list-group-item list-group-item-action active">
-                            Reportes</button>
-                        <asp:HyperLink ID="hplReporte" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()" Font-Size="Large" ForeColor="Blue">Reporte de Producto</asp:HyperLink>
-                    </div>
-                    <div class="list-group">
-                        <button type="button" class="list-group-item list-group-item-action active">
                             Seguridad</button>
                         <asp:HyperLink ID="hplCambioPassword" CssClass="list-group-item list-group-item-action" runat="server" onclick="closeNav()" Font-Size="Large" NavigateUrl="~/CambioPassword.aspx" ForeColor="Blue">Modificar Contraseña</asp:HyperLink>
                          <asp:HyperLink ID="hplCerrarSesion" CssClass="list-group-item list-group-item-action" runat="server"  Font-Size="Large" NavigateUrl="~/WFLogin.aspx" ForeColor="Blue">Cerrar Sesion</asp:HyperLink>

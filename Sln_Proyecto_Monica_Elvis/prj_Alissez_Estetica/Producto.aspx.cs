@@ -138,13 +138,20 @@ namespace prj_Alissez_Estetica
 
         private void EliminarFila(int nrofila)
         {
-            int Id = int.Parse(gvProductos.Rows[nrofila].Cells[0].Text);
-            using (BDAlissezEntities contexto = new BDAlissezEntities())
+            try {
+                int Id = int.Parse(gvProductos.Rows[nrofila].Cells[0].Text);
+                using (BDAlissezEntities contexto = new BDAlissezEntities())
+                {
+
+                    Producto rec = contexto.Productoes.FirstOrDefault<Producto>(s => s.id == Id);
+                    contexto.Productoes.Remove(rec);
+                    contexto.SaveChanges();
+                }
+            } catch(Exception e)
             {
-                Producto rec = contexto.Productoes.FirstOrDefault<Producto>(s => s.id == Id);
-                contexto.Productoes.Remove(rec);
-                contexto.SaveChanges();
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Eliminar producto", "alert('No se puede eliminar el producto, ya esta siendo usado')", true);
             }
+            
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)

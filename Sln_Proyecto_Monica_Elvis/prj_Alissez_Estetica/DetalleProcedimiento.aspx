@@ -33,11 +33,13 @@
                     <asp:Label ID="lblCantidad" runat="server" Text="Cantidad Producto"></asp:Label>
                     <asp:TextBox ID="txtCantidad" CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="reqCantidad" runat="server" ControlToValidate="txtCantidad" ErrorMessage="La Cantidad es requerida" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
+                    <asp:CustomValidator ID="validarCantidad" runat="server" ErrorMessage="Cantidad no disponible" OnServerValidate="validarCantidad_ServerValidate" ControlToValidate="txtCantidad" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:CustomValidator>
                 </div>
                 <div class="col-sm-3">
                     <asp:Label ID="lblValorCobrado" runat="server" Text="Valor Cobrado"></asp:Label>
                     <asp:TextBox ID="txtValorCobrado" CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="reqValorCobrado" runat="server" ControlToValidate="txtValorCobrado" ErrorMessage="El Valor es requerido" Font-Bold="True" Font-Italic="True" Font-Names="Bell MT" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="#CC3300"></asp:RequiredFieldValidator>
+                    
                 </div>
             </div>
             <div class="form-group row col-sm-8">

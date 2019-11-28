@@ -103,13 +103,23 @@ namespace prj_Alissez_Estetica
 
         private void EliminarFila(int nrofila)
         {
-            int Id = int.Parse(gvTipoProductos.Rows[nrofila].Cells[0].Text);
-            using (BDAlissezEntities contexto = new BDAlissezEntities())
+            
+
+            try
             {
-                Tipo_Producto rec = contexto.Tipo_Producto.FirstOrDefault<Tipo_Producto>(s => s.id == Id);
-                contexto.Tipo_Producto.Remove(rec);
-                contexto.SaveChanges();
+                int Id = int.Parse(gvTipoProductos.Rows[nrofila].Cells[0].Text);
+                using (BDAlissezEntities contexto = new BDAlissezEntities())
+                {
+                    Tipo_Producto rec = contexto.Tipo_Producto.FirstOrDefault<Tipo_Producto>(s => s.id == Id);
+                    contexto.Tipo_Producto.Remove(rec);
+                    contexto.SaveChanges();
+                }
             }
+            catch (Exception e)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Eliminar producto", "alert('No se puede eliminar el tipo producto, ya esta siendo usado')", true);
+            }
+
         }
       
     }

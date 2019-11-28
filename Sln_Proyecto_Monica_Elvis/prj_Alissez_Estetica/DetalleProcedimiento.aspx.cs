@@ -11,6 +11,7 @@ namespace prj_Alissez_Estetica
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (!IsPostBack)
             {
                 cargarProcedimiento();
@@ -91,21 +92,65 @@ namespace prj_Alissez_Estetica
         {
             using (BDAlissezEntities contexto = new BDAlissezEntities())
             {
-                Detalle_Procedimiento rec = new Detalle_Procedimiento();
-                rec.id_procedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
-                rec.id_producto = Convert.ToInt32(ddlProducto.SelectedValue);
-                string fecha = txtFecha.Text;
-                rec.fecha = DateTime.Parse(fecha);
-                rec.cantidad = Convert.ToInt32(txtCantidad.Text);
-                rec.valor_cobrado = Convert.ToInt32(txtValorCobrado.Text);
-                contexto.Detalle_Procedimiento.Add(rec);
-                contexto.SaveChanges();
+                Page.Validate();
+                if (Page.IsValid)
+                {
+                    int Id = Convert.ToInt32(ddlProducto.SelectedValue);
+                    Producto pro = contexto.Productoes.FirstOrDefault<Producto>(s => s.id == Id);
+                    int cant = Convert.ToInt32(pro.cantidad_disponible);
+                    
+                        pro.cantidad_disponible = cant - Convert.ToInt32(txtCantidad.Text);
+                        contexto.SaveChanges();
+                        Detalle_Procedimiento rec = new Detalle_Procedimiento();
+                        rec.id_procedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
+                        rec.id_producto = Convert.ToInt32(ddlProducto.SelectedValue);
+                        string fecha = txtFecha.Text;
+                        rec.fecha = DateTime.Parse(fecha);
+                        rec.cantidad = Convert.ToInt32(txtCantidad.Text);
+                        rec.valor_cobrado = Convert.ToInt32(txtValorCobrado.Text);
+                        contexto.Detalle_Procedimiento.Add(rec);
+                        contexto.SaveChanges();
+                }
+
+                //ACTUALIZA PRODUCTO
+                /**int Id = Convert.ToInt32(ddlProducto.SelectedValue);
+                Producto pro = contexto.Productoes.FirstOrDefault<Producto>(s => s.id == Id);
+                int cant = Convert.ToInt32(pro.cantidad_disponible);
+                if (cant< Convert.ToInt32(txtCantidad.Text))
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Cantidad", "alert('la cantidad no esta disponible')", true);
+                }
+                else
+                {
+                    pro.cantidad_disponible = cant - Convert.ToInt32(txtCantidad.Text);
+                    contexto.SaveChanges();
+                    Detalle_Procedimiento rec = new Detalle_Procedimiento();
+                    rec.id_procedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
+                    rec.id_producto = Convert.ToInt32(ddlProducto.SelectedValue);
+                    string fecha = txtFecha.Text;
+                    rec.fecha = DateTime.Parse(fecha);
+                    rec.cantidad = Convert.ToInt32(txtCantidad.Text);
+                    rec.valor_cobrado = Convert.ToInt32(txtValorCobrado.Text);
+                    contexto.Detalle_Procedimiento.Add(rec);
+                    contexto.SaveChanges();
+
+                }**/
+                
+                
+
+            }
+        }
+
+        private void CargarCantidad()
+        {
+            using (BDAlissezEntities contexto = new BDAlissezEntities())
+            {
                 //ACTUALIZA PRODUCTO
                 int Id = Convert.ToInt32(ddlProducto.SelectedValue);
                 Producto pro = contexto.Productoes.FirstOrDefault<Producto>(s => s.id == Id);
-                pro.cantidad_disponible  = pro.cantidad_disponible- Convert.ToInt32(txtCantidad.Text);
-                contexto.SaveChanges();
-
+                int cant = Convert.ToInt32(pro.cantidad_disponible);
+                lblCantidad.Text = lblCantidad.Text + " ("+cant+")";
+               
             }
         }
 
@@ -159,5 +204,30 @@ namespace prj_Alissez_Estetica
                 contexto.SaveChanges();
             }
         }
+
+
+
+        protected void validarCantidad_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            using (BDAlissezEntities contexto = new BDAlissezEntities())
+            {
+                int Id = Convert.ToInt32(ddlProducto.SelectedValue);
+                Producto pro = contexto.Productoes.FirstOrDefault<Producto>(s => s.id == Id);
+                int cant = Convert.ToInt32(pro.cantidad_disponible);
+                int cantidad= Convert.ToInt32(txtCantidad.Text);
+                if (cantidad>cant)
+                {
+                    args.IsValid = false;
+                }
+                else
+                {
+                    args.IsValid = true;
+                }
+               
+
+            }
+        }
+
+       
     }
 }

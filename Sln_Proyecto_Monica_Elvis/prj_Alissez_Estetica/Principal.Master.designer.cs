@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace prj_Alissez_Estetica
-{
-
-
-    public partial class Principal
-    {
-
+namespace prj_Alissez_Estetica {
+    
+    
+    public partial class Principal {
+        
         /// <summary>
         /// Control head.
         /// </summary>
@@ -22,7 +20,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-
+        
         /// <summary>
         /// Control hplTipoProducto.
         /// </summary>
@@ -31,7 +29,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hplTipoProducto;
-
+        
         /// <summary>
         /// Control hplProducto.
         /// </summary>
@@ -40,7 +38,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hplProducto;
-
+        
         /// <summary>
         /// Control hplProcedimiento.
         /// </summary>
@@ -49,7 +47,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hplProcedimiento;
-
+        
         /// <summary>
         /// Control hplMedidaProducto.
         /// </summary>
@@ -58,7 +56,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hplMedidaProducto;
-
+        
         /// <summary>
         /// Control hplDetalleProcedimiento.
         /// </summary>
@@ -67,16 +65,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hplDetalleProcedimiento;
-
-        /// <summary>
-        /// Control hplReporte.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplReporte;
-
+        
         /// <summary>
         /// Control hplCambioPassword.
         /// </summary>
@@ -85,7 +74,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hplCambioPassword;
-
+        
         /// <summary>
         /// Control hplCerrarSesion.
         /// </summary>
@@ -94,7 +83,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hplCerrarSesion;
-
+        
         /// <summary>
         /// Control lblLogin.
         /// </summary>
@@ -103,7 +92,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLogin;
-
+        
         /// <summary>
         /// Control ContentPlaceHolder1.
         /// </summary>

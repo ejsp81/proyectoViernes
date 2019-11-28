@@ -109,12 +109,21 @@ namespace prj_Alissez_Estetica
 
         private void EliminarFila(int nrofila)
         {
-            int Id = int.Parse(gvProcedimiento.Rows[nrofila].Cells[0].Text);
-            using (BDAlissezEntities contexto = new BDAlissezEntities())
+           
+
+            try
             {
-                Procedimiento rec = contexto.Procedimientoes.FirstOrDefault<Procedimiento>(s => s.id == Id);
-                contexto.Procedimientoes.Remove(rec);
-                contexto.SaveChanges();
+                int Id = int.Parse(gvProcedimiento.Rows[nrofila].Cells[0].Text);
+                using (BDAlissezEntities contexto = new BDAlissezEntities())
+                {
+                    Procedimiento rec = contexto.Procedimientoes.FirstOrDefault<Procedimiento>(s => s.id == Id);
+                    contexto.Procedimientoes.Remove(rec);
+                    contexto.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Eliminar producto", "alert('No se puede eliminar el procedimiento, ya esta siendo usado')", true);
             }
 
         }

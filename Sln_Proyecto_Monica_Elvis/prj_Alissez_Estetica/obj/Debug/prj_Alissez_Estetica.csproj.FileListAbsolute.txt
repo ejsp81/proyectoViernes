@@ -167,3 +167,4 @@ C:\Proyecto Viernes\proyectoViernes\Sln_Proyecto_Monica_Elvis\prj_Alissez_Esteti
 C:\Proyecto Viernes\proyectoViernes\Sln_Proyecto_Monica_Elvis\prj_Alissez_Estetica\obj\Debug\prj_Alissez_Estetica.dll
 C:\Proyecto Viernes\proyectoViernes\Sln_Proyecto_Monica_Elvis\prj_Alissez_Estetica\obj\Debug\prj_Alissez_Estetica.pdb
 C:\Proyecto Viernes\proyectoViernes\Sln_Proyecto_Monica_Elvis\prj_Alissez_Estetica\obj\Debug\prj_Alissez_Estetica.csprojAssemblyReference.cache
+C:\Proyecto Viernes\proyectoViernes\Sln_Proyecto_Monica_Elvis\prj_Alissez_Estetica\obj\Debug\prj_Alissez_Estetica.csproj.CoreCompileInputs.cache

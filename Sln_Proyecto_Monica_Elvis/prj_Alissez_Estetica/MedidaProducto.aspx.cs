@@ -110,14 +110,22 @@ namespace prj_Alissez_Estetica
 
         private void EliminarFila(int nrofila)
         {
-            int Id = int.Parse(gvMedidaProducto.Rows[nrofila].Cells[0].Text);
-            using (BDAlissezEntities contexto = new BDAlissezEntities())
+            
+
+            try
             {
-                Medida_Producto rec = contexto.Medida_Producto.FirstOrDefault<Medida_Producto>(s => s.id == Id);
-                contexto.Medida_Producto.Remove(rec);
-                contexto.SaveChanges();
+                int Id = int.Parse(gvMedidaProducto.Rows[nrofila].Cells[0].Text);
+                using (BDAlissezEntities contexto = new BDAlissezEntities())
+                {
+                    Medida_Producto rec = contexto.Medida_Producto.FirstOrDefault<Medida_Producto>(s => s.id == Id);
+                    contexto.Medida_Producto.Remove(rec);
+                    contexto.SaveChanges();
+                }
             }
-           
+            catch (Exception e)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Eliminar producto", "alert('No se puede eliminar la Medida de producto, ya esta siendo usada')", true);
+            }
         }
     }
 }

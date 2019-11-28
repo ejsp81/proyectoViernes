@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace prj_Alissez_Estetica
-{
-
-
-    public partial class DetalleProcedimiento
-    {
-
+namespace prj_Alissez_Estetica {
+    
+    
+    public partial class DetalleProcedimiento {
+        
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -22,7 +20,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// Control hdfIdDetalleProcedimiento.
         /// </summary>
@@ -31,7 +29,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hdfIdDetalleProcedimiento;
-
+        
         /// <summary>
         /// Control lblProcedimiento.
         /// </summary>
@@ -40,7 +38,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblProcedimiento;
-
+        
         /// <summary>
         /// Control ddlProcedimiento.
         /// </summary>
@@ -49,7 +47,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlProcedimiento;
-
+        
         /// <summary>
         /// Control lblProducto.
         /// </summary>
@@ -58,7 +56,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblProducto;
-
+        
         /// <summary>
         /// Control ddlProducto.
         /// </summary>
@@ -67,7 +65,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlProducto;
-
+        
         /// <summary>
         /// Control lblFecha.
         /// </summary>
@@ -76,7 +74,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFecha;
-
+        
         /// <summary>
         /// Control txtFecha.
         /// </summary>
@@ -85,7 +83,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFecha;
-
+        
         /// <summary>
         /// Control reqFecha.
         /// </summary>
@@ -94,7 +92,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqFecha;
-
+        
         /// <summary>
         /// Control lblCantidad.
         /// </summary>
@@ -103,7 +101,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCantidad;
-
+        
         /// <summary>
         /// Control txtCantidad.
         /// </summary>
@@ -112,7 +110,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCantidad;
-
+        
         /// <summary>
         /// Control reqCantidad.
         /// </summary>
@@ -121,7 +119,16 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqCantidad;
-
+        
+        /// <summary>
+        /// Control validarCantidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator validarCantidad;
+        
         /// <summary>
         /// Control lblValorCobrado.
         /// </summary>
@@ -130,7 +137,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblValorCobrado;
-
+        
         /// <summary>
         /// Control txtValorCobrado.
         /// </summary>
@@ -139,7 +146,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtValorCobrado;
-
+        
         /// <summary>
         /// Control reqValorCobrado.
         /// </summary>
@@ -148,7 +155,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValorCobrado;
-
+        
         /// <summary>
         /// Control btnRegistrar.
         /// </summary>
@@ -157,7 +164,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRegistrar;
-
+        
         /// <summary>
         /// Control btnActualizar.
         /// </summary>
@@ -166,7 +173,7 @@ namespace prj_Alissez_Estetica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnActualizar;
-
+        
         /// <summary>
         /// Control gvDetalleProcedimientos.
         /// </summary>
